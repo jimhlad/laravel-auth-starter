@@ -11,7 +11,7 @@ These instructions assume that you have an environment setup and ready to go (e.
 1. Clone the git repo
 2. "composer update" to grab the required packages
 3. Re-name the .env.example file to .env and add in your DB & Mailgun settings
-4. "php artian key:generate" to update the APP_KEY in the .env file
+4. "php artisan key:generate" to update the APP_KEY in the .env file
 5. "php artisan make:migrate" to create the database structure
 6. Visit http://your.app
 
