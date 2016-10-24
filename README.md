@@ -11,8 +11,8 @@ These instructions assume that you have an environment setup and ready to go (e.
 1. Clone the git repo
 2. "composer update" to grab the required packages
 3. Re-name the .env.example file to .env and add in your DB & Mailgun settings
-4. "php artian key:generate" to update the APP_KEY in the .env file
-5. "php artisan make:migrate" to create the database structure
+4. "php artisan key:generate" to update the APP_KEY in the .env file
+5. "php artisan migrate" to create the database structure
 6. Visit http://your.app
 
 ## Features
@@ -49,6 +49,17 @@ The rap2hpoutre Laravel Log Viewer is included for easily viewing of log files b
 
 ## Future
 
-I am hoping to add more features soon, such as built in Javascript validation of all forms using Laravel Request objects.
+I am hoping to add more features soon, such as built-in Javascript validation of all forms using Laravel FormRequest objects.
+
+Here is a current list of my ideas so that I don't forget:
+
+1. Re-factor the default Auth validation logic using Laravel FormRequest objects
+2. Incorporate existing plugin to automatically build JS/AJAX validation rules from FormRequest objects
+3. Enforce strong passwords when users are registering or resetting their password
+4. Add profile page allowing the user to update their basic information and choose an avatar
+5. Create a generic FileService which can be used to upload images (e.g. the avatar) to Amazon's S3 service
+6. Support for SMS notifications
+7. Support for two-factor authentication via text/email
+8. Add support for basic user roles using custom Middelware
 
 Feel free to send me a message if there is something in particular that you think should be added!
