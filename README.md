@@ -4,6 +4,12 @@ This is a very simple Laravel app which provides some starter code for creating 
 
 Please note that this is *very very* much a work in progress and is something I am just messing around with in my spare time :)
 
+![alt tag](https://cloud.githubusercontent.com/assets/6893042/19648013/b11b5786-99ce-11e6-857b-7db878a3b80a.png)
+
+![alt tag](https://cloud.githubusercontent.com/assets/6893042/19648019/b65d9c86-99ce-11e6-9c0b-358422bb9a26.png)
+
+![alt tag](https://cloud.githubusercontent.com/assets/6893042/19648031/bc9ad4b0-99ce-11e6-8c97-1e5c834daee7.png)
+
 ## Installation
 
 These instructions assume that you have an environment setup and ready to go (e.g. using Vagrant and Homestead) with Composer and other Laravel-related requirements already installed and configured.
