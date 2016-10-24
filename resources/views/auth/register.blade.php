@@ -22,14 +22,18 @@
 
             {!! Form::open(['url' => '/register', 'method'=> 'post']) !!}
 
-                {!! Form::text('name', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.fullname')]) !!}
-
-                {!! Form::email('email', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.email')]) !!}
-
-                {!! Form::password('password', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.password')]) !!}
-
-                {!! Form::password('password_confirmation', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.retrypepassword')]) !!}
-
+                <div class="form-group">
+                    {!! Form::text('name', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.fullname')]) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::email('email', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.email')]) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::password('password', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.password')]) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::password('password_confirmation', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.retrypepassword')]) !!}
+                </div>
                 {!! Form::submit(trans('adminlte_lang::message.register'), ['class'=> 'btn btn-primary btn-block btn-flat']) !!}
 
             {!! Form::close() !!}

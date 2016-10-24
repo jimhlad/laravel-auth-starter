@@ -27,11 +27,18 @@
 
                 {!! Form::hidden('token', $token) !!}
 
-                {!! Form::email('email', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.email')]) !!}
+                <div class="form-group">
+                    {!! Form::email('email', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.email')]) !!}
+                </div>
 
-                {!! Form::password('password', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.password')]) !!}
+                <div class="form-group">
+                    {!! Form::password('password', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.password')]) !!}
 
-                {!! Form::password('password_confirmation', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.retrypepassword')]) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::password('password_confirmation', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.retrypepassword')]) !!}
+                </div>
 
                 {!! Form::submit(trans('adminlte_lang::message.passwordreset'), ['class'=> 'btn btn-primary btn-block btn-flat']) !!}
 

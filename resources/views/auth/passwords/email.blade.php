@@ -21,8 +21,10 @@
 
             {!! Form::open(['url' => '/password/email', 'method'=> 'post']) !!}
 
-                {!! Form::email('email', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.email')]) !!}
-
+                <div class="form-group">
+                    {!! Form::email('email', '', ['class'=> 'form-control', 'placeholder'=> trans('adminlte_lang::message.email')]) !!}
+                </div>
+                
                 {!! Form::submit(trans('adminlte_lang::message.sendpassword'), ['class'=> 'btn btn-primary btn-block btn-flat']) !!}
 
             {!! Form::close() !!}
