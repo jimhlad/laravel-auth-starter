@@ -6,6 +6,8 @@ use App\User;
 use Validator;
 use App\Services\RegisterService;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Exceptions\UserCouldNotBeRegisteredException;
 
@@ -50,18 +52,16 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Override the typical register function on the RegistersUsers trait
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param  App\Http\Requests\RegisterRequest  $request
+     * @return \Illuminate\Http\Response
      */
-    protected function validator(array $data)
+    public function register(RegisterRequest $request)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+        event(new Registered($user = $this->create($request->all())));
+        $this->guard()->login($user);
+        return redirect($this->redirectPath());
     }
 
     /**
