@@ -23,9 +23,17 @@ Some features that are made available out of the box include:
 
 The popular AdminLTE theme with some minor customizations as described below.
 
-#### Login, Register & Forgot Password
+#### Login, Register & Forgot Password Forms
 
 The standard pages that come with the "php artisan make:auth" command. Some tweaking was done to substitute the default HTML form boilerplate with Laravel Collective form builder code.
+
+#### Strong Passwords
+
+The registration and reset password forms enforces a strong password which requires at least one capital letter and one number.
+
+#### Inline Real-time JS Validation
+
+As the user types they receive friendly visual feedback in real-time indicating any input issues.
 
 #### Email Verification
 

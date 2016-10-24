@@ -40,6 +40,8 @@
 
     </div><!-- /.register-box -->
 
+    {!! JsValidator::formRequest('App\Http\Requests\RegisterRequest') !!}
+
 </body>
 
 @endsection

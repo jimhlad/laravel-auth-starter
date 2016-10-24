@@ -4,3 +4,6 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- iCheck -->
 <script src="{{ asset('/plugins/iCheck/icheck.min.js') }}" type="text/javascript"></script>
+
+<!-- Laravel Javascript Validation -->
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>

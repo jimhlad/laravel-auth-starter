@@ -45,6 +45,8 @@
 
     </div><!-- /.login-box -->
 
+    {!! JsValidator::formRequest('App\Http\Requests\ResetPasswordRequest') !!}
+
 </body>
 
 @endsection

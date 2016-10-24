@@ -37,6 +37,8 @@
 
     </div><!-- /.login-box -->
 
+    {!! JsValidator::formRequest('App\Http\Requests\LoginRequest') !!}
+
 </body>
 
 @endsection

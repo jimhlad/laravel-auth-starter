@@ -60,9 +60,5 @@ desired effect
 
 </div><!-- ./wrapper -->
 
-@section('scripts')
-    @include('layouts.partials.scripts')
-@show
-
 </body>
 </html>

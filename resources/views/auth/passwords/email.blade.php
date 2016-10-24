@@ -35,6 +35,8 @@
 
     </div><!-- /.login-box -->
 
+    {!! JsValidator::formRequest('App\Http\Requests\ForgotPasswordRequest') !!}
+
 </body>
 
 @endsection
