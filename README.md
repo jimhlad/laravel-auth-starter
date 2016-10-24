@@ -4,6 +4,8 @@ This is a very simple Laravel app which provides some starter code for creating 
 
 Please note that this is *very very* much a work in progress and is something I am just messing around with in my spare time :)
 
+## Screenshots
+
 ![alt tag](https://cloud.githubusercontent.com/assets/6893042/19648013/b11b5786-99ce-11e6-857b-7db878a3b80a.png)
 
 ![alt tag](https://cloud.githubusercontent.com/assets/6893042/19648019/b65d9c86-99ce-11e6-9c0b-358422bb9a26.png)
@@ -37,7 +39,7 @@ The standard pages that come with the "php artisan make:auth" command. Some twea
 
 The registration and reset password forms enforces a strong password which requires at least one capital letter and one number.
 
-#### Inline Real-time JS Validation
+#### Inline Real-time JS Form Validation
 
 As the user types they receive friendly visual feedback in real-time indicating any input issues.
 
