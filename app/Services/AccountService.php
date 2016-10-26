@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\User;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AccountService extends BaseService
@@ -14,12 +15,19 @@ class AccountService extends BaseService
   private $user;
 
  /**
+  * @var Illuminate\Contracts\Auth\Guard $auth
+  */
+  private $auth;
+
+ /**
   * Construct the service with the given repo
-  * 
+  *
+  * @param Illuminate\Contracts\Auth\Guard $auth
   * @param App\User $user
   */
-  public function __construct(User $user) {
+  public function __construct(Guard $auth, User $user) {
 
+    $this->auth = $auth;
     $this->user = $user;
 
   }
@@ -36,6 +44,18 @@ class AccountService extends BaseService
     $user = $this->user->where('verify_token', $token)->firstOrFail();
     $user->is_verified = 1;
     $user->save();
+  
+  }
+
+ /**
+  * Update the users's profile information given an array payload
+  *
+  * @param  array $payload
+  * @return void
+  */
+  public function updateProfile($payload) {
+
+    $this->auth->user()->update($payload);
   
   }
 

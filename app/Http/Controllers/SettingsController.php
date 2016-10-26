@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\AccountService;
 use Illuminate\Contracts\Auth\Guard;
 use App\Http\Requests\User\UpdateProfileRequest;
 
@@ -21,14 +22,22 @@ class SettingsController extends Controller
     private $auth;
 
     /**
+     * The AccountService responsible for updating a user's account
+     * 
+     * @var App\Services\AccountService $accountService
+     */
+    private $accountService;
+
+    /**
      * Create a new controller instance.
      *
      * @param Illuminate\Contracts\Auth\Guard $auth
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct(Guard $auth, AccountService $accountService)
     {
         $this->auth = $auth;
+        $this->accountService = $accountService;
     }
 
     /**
@@ -49,8 +58,9 @@ class SettingsController extends Controller
      */
     public function updateProfile(UpdateProfileRequest $request)
     {
+        $this->accountService->updateProfile($request->all());
+        flash('Your profile information has been updated', 'success');
         $user = $this->auth->user();
-        $user->update($request->all());
         return view('settings')->with('user', $user);
     }
 }
