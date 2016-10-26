@@ -22,6 +22,9 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::get('logout', 'Auth\LoginController@logout');
 
+    Route::get('settings', 'SettingsController@index');
+    Route::post('settings', 'SettingsController@updateProfile');
+
     // Display global alerts
     Route::group(['middleware' => 'alerts'], function () {
         Route::get('home', 'HomeController@index');
