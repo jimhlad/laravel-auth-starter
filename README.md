@@ -72,7 +72,7 @@ Here is a current list of my ideas so that I don't forget:
 1. ~~Re-factor the default Auth validation logic using Laravel FormRequest objects~~
 2. ~~Incorporate existing plugin to automatically build JS/AJAX validation rules from FormRequest objects~~
 3. ~~Enforce strong passwords when users are registering or resetting their password~~
-4. Add profile page allowing the user to update their basic information and choose an avatar
+4. ~~Add profile page allowing the user to update their basic information~~ and choose an avatar
 5. Create a generic FileService which can be used to upload images (e.g. the avatar) to Amazon's S3 service
 6. Support for SMS notifications
 7. Support for two-factor authentication via text/email
