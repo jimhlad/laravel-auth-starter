@@ -21,7 +21,10 @@ These instructions assume that you have an environment setup and ready to go (e.
 3. Re-name the .env.example file to .env and add in your DB & Mailgun settings
 4. "php artisan key:generate" to update the APP_KEY in the .env file
 5. "php artisan migrate" to create the database structure
-6. Visit http://your.app
+6. "php artisan db:seed" to add some sample data to the database.
+7. "npm install" to added the required node packages
+8. "gulp" to generate all of the assets
+9. Visit http://your.app
 
 ## Features
 
