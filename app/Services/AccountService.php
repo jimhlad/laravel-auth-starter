@@ -55,6 +55,11 @@ class AccountService extends BaseService
   */
   public function updateProfile($payload) {
 
+    if (!isset($payload['is_email_opted_in'])) {
+      $payload['is_email_opted_in'] = 0;
+    }
+
+    $payload['is_email_opted_in'] = (int) $payload['is_email_opted_in'];
     $this->auth->user()->update($payload);
   
   }

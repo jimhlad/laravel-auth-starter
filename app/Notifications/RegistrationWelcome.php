@@ -4,41 +4,14 @@ namespace App\Notifications;
 
 use App\User;
 use Illuminate\Bus\Queueable;
+use App\Notifications\OptedInNotification;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class RegistrationWelcome extends Notification
+class RegistrationWelcome extends OptedInNotification
 {
-    use Queueable;
-
-    /**
-     * @var App\User
-     */
-    private $user;
-
-    /**
-     * Create a new notification instance.
-     *
-     * @param App\User $user
-     * @return void
-     */
-    public function __construct(User $user)
-    {
-        $this->user = $user;
-    }
-
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function via($notifiable)
-    {
-        return ['mail'];
-    }
-
+    
     /**
      * Get the mail representation of the notification.
      *

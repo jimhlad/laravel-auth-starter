@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Services\VideoService;
 use Illuminate\Contracts\Auth\Guard;
 
 /**
@@ -21,15 +22,23 @@ class HomeController extends Controller
     private $auth;
 
     /**
+     * Our VideoService class
+     * 
+     * @var App\Services\VideoService $videoService
+     */
+    private $videoService;
+
+    /**
      * Create a new controller instance.
      *
      * @param Illuminate\Contracts\Auth\Guard $auth
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct(Guard $auth, VideoService $videoService)
     {
         $this->middleware('auth');
         $this->auth = $auth;
+        $this->videoService = $videoService;
     }
 
     /**
@@ -43,6 +52,7 @@ class HomeController extends Controller
         if ($welcome) {
             return view('welcome');
         }
-        return view('home');
+        $videos = $this->videoService->getRecentVideos();
+        return view('home')->with('videos', $videos);
     }
 }

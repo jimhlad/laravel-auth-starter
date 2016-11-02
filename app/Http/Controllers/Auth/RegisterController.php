@@ -59,7 +59,9 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request)
     {
-        event(new Registered($user = $this->create($request->all())));
+        $payload = $request->all();
+        $payload['ip_address'] = $request->ip();
+        event(new Registered($user = $this->create($payload)));
         $this->guard()->login($user);
         return redirect($this->redirectPath());
     }
@@ -76,6 +78,8 @@ class RegisterController extends Controller
             return $this->registerService->signup([
                 'name' => $data['name'],
                 'email' => $data['email'],
+                'phone_number' => '',
+                'ip_address' => $data['ip_address'],
                 'password' => bcrypt($data['password']),
             ]);
         }

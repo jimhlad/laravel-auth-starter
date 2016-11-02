@@ -47,6 +47,8 @@ class UpdateProfileRequest extends FormRequest
         return [
             'name' => 'required|max:100',
             'email' => 'required|email|max:255|unique:users,email,'.$this->auth->user()->id,
+            'phone_number' => 'max:30',
+            'is_email_opted_in' => 'in:0,1',
         ];
     }
 }

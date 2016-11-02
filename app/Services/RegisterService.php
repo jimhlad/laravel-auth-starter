@@ -39,6 +39,8 @@ class RegisterService extends BaseService
 
       // Create the user with a random verification token
       $payload['verify_token'] = str_random(32);
+      $payload['is_email_opted_in'] = 1;
+
       $user = $this->user->create($payload);
 
       // Broadcast the appropriate events and notifications
