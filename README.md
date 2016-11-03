@@ -1,8 +1,10 @@
-# laravel-admin-starter
+# laravel-auth-starter
 
-This is a very simple Laravel app which provides some starter code for creating an authentication-based web admin portal (provides some sample code for a basic video listing site). Basically its purpose is to add some flavouring on top of the default "php artisan make:auth" functionality and to incorporate some commonly needed features.
+This is a very simple Laravel app which provides some starter code for creating an authentication-based web portal. Basically its purpose is to add some flavouring on top of the default "php artisan make:auth" functionality and to incorporate some commonly needed features.
 
-Please note that this is *very very* much a work in progress and is something I am just messing around with in my spare time :)
+The app includes some basic sample code to display a list of YouTube videos. This code can easily be re-purposed to create any other kind of application (it only serves as an example of the Controller-Service-Model design pattern in action). 
+
+Please note that this is *very* much a work in progress and is something I am just messing around with in my spare time :)
 
 ## Screenshots
 
@@ -62,6 +64,10 @@ When a user successfully signs in to the application, their last login date is a
 
 The user is taken to a welcome page after a successful registration. This page is accessible only once. The user is brought to the standard home page upon all subsequent logins.
 
+#### Settings Page
+
+There is a basic settings page allowing the user to change their profile information and toggle email notification preferences.
+
 #### Log Viewer
 
 The rap2hpoutre Laravel Log Viewer is included for easily viewing of log files by visiting http://your.app/logs.
@@ -80,5 +86,6 @@ Here is a current list of my ideas so that I don't forget:
 6. Support for SMS notifications
 7. Support for two-factor authentication via text/email
 8. Add support for basic user roles using custom Middelware
+9. Add password protection for the log viewer page
 
 Feel free to send me a message if there is something in particular that you think should be added!
