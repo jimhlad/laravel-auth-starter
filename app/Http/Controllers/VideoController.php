@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
  * Class VideoController
+ *
+ * This is a class containing some sample code for basic video listing functionality.
+ * 
  * @package App\Http\Controllers
  */
 class VideoController extends Controller
@@ -47,7 +50,7 @@ class VideoController extends Controller
      * @param string $slug
      * @return Illuminate\Http\Response
      */
-    public function index($slug)
+    public function index(string $slug)
     {
         try {
             $video = $this->videoService->findBySlug($slug);
