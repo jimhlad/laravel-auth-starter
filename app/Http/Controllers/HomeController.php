@@ -9,6 +9,9 @@ use Illuminate\Contracts\Auth\Guard;
 
 /**
  * Class HomeController
+ *
+ * This class is responsible for displaying the home page.
+ * 
  * @package App\Http\Controllers
  */
 class HomeController extends Controller
